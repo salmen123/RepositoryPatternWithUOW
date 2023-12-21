@@ -86,7 +86,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         public T Add(T entity)
         {
             _context.Set<T>().Add(entity);
-            _context.SaveChanges();
+            //_context.SaveChanges();
 
             return entity;
         }
@@ -94,7 +94,7 @@ namespace RepositoryPatternWithUOW.EF.Repositories
         public IEnumerable<T> AddRange(IEnumerable<T> entities)
         {
             _context.Set<T>().AddRange(entities);
-            _context.SaveChanges();
+            //_context.SaveChanges();
 
             return entities;
         }
