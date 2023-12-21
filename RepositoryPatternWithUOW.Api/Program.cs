@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using RepositoryPatternWithUOW.Core;
 using RepositoryPatternWithUOW.Core.Interfaces;
 using RepositoryPatternWithUOW.EF;
 using RepositoryPatternWithUOW.EF.Repositories;
@@ -17,7 +18,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+//builder.Services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddSwaggerGen();
 
