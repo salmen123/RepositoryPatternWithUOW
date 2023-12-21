@@ -52,6 +52,7 @@ namespace RepositoryPatternWithUOW.Api.Controllers
         public IActionResult AddOne()
         {
             var book = _unitOfWork.Books.Add(new Book { Title = "Title 4", AuthorId = 1 });
+            //var book = _unitOfWork.Books.SpecialMethod();
             return Ok(book);
         }
     }
